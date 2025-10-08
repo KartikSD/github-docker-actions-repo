@@ -1,0 +1,20 @@
+name: containerAction
+
+description: create a action using docker conatainer
+
+inputs:
+  number1:
+    required: true
+    default: 0
+  number2:
+    required: true
+    default: 0
+outputs:
+  result:
+    description: sum of the two numbers using docker container action
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.number1 }}
+    - ${{ inputs.number2 }}
